@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio website showcasing web development projects and technical blog posts">
+    <title>Developer Portfolio | Personal Brand</title>
+
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" as="style">
+    
+    <!-- 样式表 -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- 页面加载动画 -->
+    <style>
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .page-loader.fade-out {
+            opacity: 0;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #1E3A8A;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-inter text-text bg-white">
+    <!-- 页面加载动画 -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner mb-4"></div>
+            <p class="text-secondary-600">Loading...</p>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="/" class="text-2xl font-bold font-montserrat text-primary">
+                    <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
+                </a>
+
+                <!-- 桌面端导航菜单 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-text" id="menuButton">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="container-custom py-4 bg-white">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section id="home" class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- 左侧文本区域 -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-5xl font-bold font-montserrat text-primary leading-tight">
+                        Hello, I am<br>
+                        <span class="text-primary-light">Developer</span>
+                    </h1>
+                    <p class="text-lg text-text-secondary">
+                        Full-stack developer specializing in modern web technologies.
+                        Creating elegant solutions for complex problems.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="btn-primary btn-lg">View Projects</a>
+                        <a href="#contact" class="btn-secondary btn-lg">Contact Me</a>
+                    </div>
+                </div>
+
+                <!-- 右侧代码编辑器 -->
+                <div class="relative">
+                    <div class="bg-gray-900 rounded-lg shadow-xl p-4">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <pre class="font-code text-sm text-white"><code>const developer = {
+  name: 'Your Name',
+  skills: ['JavaScript', 'React', 'Node.js'],
+  passion: 'Building amazing web apps',
+  greeting() {
+    console.log('Welcome to my portfolio!');
+  }
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术栈展示 -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container-custom">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 前端开发 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Frontend Development</h3>
+                        <p class="text-text-secondary">Modern web development with React, Vue, and responsive design.</p>
+                    </div>
+                </div>
+
+                <!-- 后端开发 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Backend Development</h3>
+                        <p class="text-text-secondary">Server-side solutions with Node.js, Python, and databases.</p>
+                    </div>
+                </div>
+
+                <!-- 移动开发 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Mobile Development</h3>
+                        <p class="text-text-secondary">Cross-platform mobile apps with React Native and Flutter.</p>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">DevOps</h3>
+                        <p class="text-text-secondary">CI/CD, cloud services, and infrastructure management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container-custom">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 项目1 -->
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <img src="assets/images/project1.jpg" alt="Project 1" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">E-commerce Platform</h3>
+                        <p class="card-description">A full-featured online shopping platform with modern UI/UX.</p>
+                        <div class="flex flex-wrap gap-2 my-4">
+                            <span class="tag-primary">React</span>
+                            <span class="tag-secondary">Node.js</span>
+                            <span class="tag-info">MongoDB</span>
+                        </div>
+                        <a href="project-detail.html?id=1" class="btn-text btn-sm">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- 项目2 -->
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <img src="assets/images/project2.jpg" alt="Project 2" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">Task Management App</h3>
+                        <p class="card-description">A collaborative task management solution for teams.</p>
+                        <div class="flex flex-wrap gap-2 my-4">
+                            <span class="tag-primary">Vue.js</span>
+                            <span class="tag-secondary">Express</span>
+                            <span class="tag-info">PostgreSQL</span>
+                        </div>
+                        <a href="project-detail.html?id=2" class="btn-text btn-sm">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- 项目3 -->
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <img src="assets/images/project3.jpg" alt="Project 3" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">Social Media Dashboard</h3>
+                        <p class="card-description">Analytics and management dashboard for social media.</p>
+                        <div class="flex flex-wrap gap-2 my-4">
+                            <span class="tag-primary">Next.js</span>
+                            <span class="tag-secondary">GraphQL</span>
+                            <span class="tag-info">AWS</span>
+                        </div>
+                        <a href="project-detail.html?id=3" class="btn-text btn-sm">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="projects.html" class="btn-primary btn-lg">View More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客文章 -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container-custom">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 文章1 -->
+                <article class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Modern Web Development Best Practices</h3>
+                        <p class="card-description">Learn about the latest trends and best practices in modern web development.</p>
+                        <div class="flex flex-wrap gap-2 my-4">
+                            <span class="tag-primary">Web Development</span>
+                            <span class="tag-secondary">Best Practices</span>
+                        </div>
+                        <a href="blog-detail.html?id=1" class="btn-text btn-sm">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </article>
+
+                <!-- 文章2 -->
+                <article class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Getting Started with React Hooks</h3>
+                        <p class="card-description">A comprehensive guide to understanding and using React Hooks effectively.</p>
+                        <div class="flex flex-wrap gap-2 my-4">
+                            <span class="tag-primary">React</span>
+                            <span class="tag-secondary">Hooks</span>
+                        </div>
+                        <a href="blog-detail.html?id=2" class="btn-text btn-sm">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-12">
+                <a href="blog.html" class="btn-primary btn-lg">Browse All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 联系信息 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-envelope mr-2"></i> hello@example.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+
+                <!-- 快速链接 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary-light transition-colors">Home</a></li>
+                        <li><a href="#skills" class="hover:text-primary-light transition-colors">Skills</a></li>
+                        <li><a href="#projects" class="hover:text-primary-light transition-colors">Projects</a></li>
+                        <li><a href="#blog" class="hover:text-primary-light transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- 社交媒体 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Personal Brand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 自定义 JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/performance.js"></script>
+</body>
+</html> 

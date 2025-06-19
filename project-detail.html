@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Personal Brand</title>
+    <meta name="description" content="Detailed information about the project, including technical details, development process, and screenshots.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="text-xl font-bold text-primary-600">Your Name</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="container-custom py-4 space-y-4">
+                <a href="index.html" class="block nav-link">Home</a>
+                <a href="about.html" class="block nav-link">About</a>
+                <a href="projects.html" class="block nav-link active">Projects</a>
+                <a href="blog.html" class="block nav-link">Blog</a>
+                <a href="contact.html" class="block nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="container-custom pt-24 pb-8">
+        <a href="projects.html" class="inline-flex items-center text-secondary-600 hover:text-primary-600 transition-colors duration-200">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Projects
+        </a>
+    </div>
+
+    <!-- Project Overview -->
+    <section class="bg-gradient-to-b from-[#EEF2FF] to-white py-12">
+        <div class="container-custom">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">Project Name</h1>
+                <div class="flex flex-wrap items-center gap-4 text-secondary-600 mb-8">
+                    <span class="flex items-center">
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        2024
+                    </span>
+                    <span class="flex items-center">
+                        <i class="fas fa-circle text-green-500 mr-2"></i>
+                        Completed
+                    </span>
+                    <span class="tag tag-primary">
+                        <i class="fas fa-code mr-1"></i>
+                        Web Development
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container-custom py-12">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+            <!-- Project Content -->
+            <div class="lg:col-span-2 space-y-12">
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Project Overview</h2>
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-secondary-600 mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <h3 class="text-xl font-bold text-secondary-900 mt-8 mb-4">Key Features</h3>
+                        <ul class="list-disc list-inside text-secondary-600 space-y-2">
+                            <li>Feature 1 description</li>
+                            <li>Feature 2 description</li>
+                            <li>Feature 3 description</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Technical Highlights -->
+                <section>
+                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Technical Highlights</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="card p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-code text-primary-600 text-2xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-secondary-900">Technology Stack</h3>
+                            </div>
+                            <p class="text-secondary-600">Detailed explanation of the technology choices and their benefits.</p>
+                        </div>
+                        <div class="card p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-sitemap text-primary-600 text-2xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-secondary-900">Architecture</h3>
+                            </div>
+                            <p class="text-secondary-600">Overview of the system architecture and design decisions.</p>
+                        </div>
+                        <div class="card p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tachometer-alt text-primary-600 text-2xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-secondary-900">Performance</h3>
+                            </div>
+                            <p class="text-secondary-600">Key performance optimizations and their impact.</p>
+                        </div>
+                        <div class="card p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-shield-alt text-primary-600 text-2xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-secondary-900">Security</h3>
+                            </div>
+                            <p class="text-secondary-600">Security measures and best practices implemented.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Development Process -->
+                <section>
+                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Development Process</h2>
+                    <div class="relative">
+                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-secondary-200"></div>
+                        <div class="space-y-8">
+                            <div class="relative pl-12">
+                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-primary-600"></i>
+                                </div>
+                                <div class="card p-6">
+                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Planning & Analysis</h3>
+                                    <p class="text-secondary-600">Initial project planning and requirements analysis phase.</p>
+                                </div>
+                            </div>
+                            <div class="relative pl-12">
+                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                    <i class="fas fa-code-branch text-primary-600"></i>
+                                </div>
+                                <div class="card p-6">
+                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Development</h3>
+                                    <p class="text-secondary-600">Core development and implementation phase.</p>
+                                </div>
+                            </div>
+                            <div class="relative pl-12">
+                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                    <i class="fas fa-vial text-primary-600"></i>
+                                </div>
+                                <div class="card p-6">
+                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Testing</h3>
+                                    <p class="text-secondary-600">Comprehensive testing and quality assurance.</p>
+                                </div>
+                            </div>
+                            <div class="relative pl-12">
+                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                    <i class="fas fa-rocket text-primary-600"></i>
+                                </div>
+                                <div class="card p-6">
+                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Launch</h3>
+                                    <p class="text-secondary-600">Project deployment and post-launch monitoring.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Screenshots -->
+                <section>
+                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Project Screenshots</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="assets/project-screenshot-1.jpg" data-lightbox="project-screenshots" data-title="Project Screenshot 1">
+                            <img src="assets/project-screenshot-1.jpg" alt="Project Screenshot 1" class="w-full h-48 object-cover rounded-lg shadow-soft hover:shadow-medium transition-shadow duration-300">
+                        </a>
+                        <a href="assets/project-screenshot-2.jpg" data-lightbox="project-screenshots" data-title="Project Screenshot 2">
+                            <img src="assets/project-screenshot-2.jpg" alt="Project Screenshot 2" class="w-full h-48 object-cover rounded-lg shadow-soft hover:shadow-medium transition-shadow duration-300">
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Project Info Card -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24">
+                    <div class="card p-6">
+                        <h3 class="text-lg font-bold text-secondary-900 mb-6">Project Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-sm font-medium text-secondary-500 mb-2">Technology Stack</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag tag-primary">React</span>
+                                    <span class="tag tag-primary">Node.js</span>
+                                    <span class="tag tag-primary">MongoDB</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-secondary-500 mb-2">My Role</h4>
+                                <p class="text-secondary-600">Lead Developer</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-secondary-500 mb-2">Development Period</h4>
+                                <p class="text-secondary-600">3 months</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-secondary-500 mb-2">Team Size</h4>
+                                <p class="text-secondary-600">5 members</p>
+                            </div>
+                            
+                            <div class="pt-6 border-t border-secondary-100 space-y-4">
+                                <a href="#" class="btn btn-primary w-full">
+                                    <i class="fab fa-github mr-2"></i>
+                                    View Source Code
+                                </a>
+                                <a href="#" class="btn btn-secondary w-full">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Visit Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition-colors duration-200 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white py-12">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p class="text-secondary-300 mb-2">
+                        <i class="fas fa-envelope mr-2"></i>
+                        email@example.com
+                    </p>
+                    <p class="text-secondary-300">
+                        <i class="fas fa-phone mr-2"></i>
+                        +1 234 567 890
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-secondary-300 hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="about.html" class="text-secondary-300 hover:text-white transition-colors duration-200">About</a></li>
+                        <li><a href="projects.html" class="text-secondary-300 hover:text-white transition-colors duration-200">Projects</a></li>
+                        <li><a href="blog.html" class="text-secondary-300 hover:text-white transition-colors duration-200">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-secondary-300 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-secondary-300 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-secondary-300 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-secondary-800 mt-8 pt-8 text-center text-secondary-400">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="js/project-detail.js"></script>
+    <script src="js/performance.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+</html> 

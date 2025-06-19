@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore my portfolio of web development projects, showcasing various technologies and solutions">
+    <title>Projects | Personal Brand</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1E3A8A',
+                            light: '#3B82F6'
+                        },
+                        text: {
+                            DEFAULT: '#111827',
+                            secondary: '#4B5563'
+                        }
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter text-text bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="/" class="text-2xl font-bold font-montserrat text-primary">
+                    <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
+                </a>
+
+                <!-- 桌面端导航菜单 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/projects.html" class="nav-link active">Projects</a>
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-text" id="menuButton">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="container-custom py-4 bg-white">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/projects.html" class="nav-link active">Projects</a>
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主标题区域 -->
+    <section class="pt-24 md:pt-32 pb-12 md:pb-16 bg-white">
+        <div class="container-custom text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-montserrat text-text mb-4">
+                My Projects
+            </h1>
+            <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                A collection of my work showcasing web development projects, from full-stack applications to interactive user interfaces.
+            </p>
+        </div>
+    </section>
+
+    <!-- 筛选标签栏 -->
+    <section class="py-6 bg-white border-b border-gray-200">
+        <div class="container-custom">
+            <div class="flex flex-wrap md:flex-nowrap gap-3 overflow-x-auto pb-2">
+                <button class="filter-tag active" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-tag" data-filter="web">
+                    Web Development
+                </button>
+                <button class="filter-tag" data-filter="mobile">
+                    Mobile Apps
+                </button>
+                <button class="filter-tag" data-filter="design">
+                    UI/UX Design
+                </button>
+                <button class="filter-tag" data-filter="other">
+                    Other Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示区域 -->
+    <section class="py-12 md:py-16">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+                <!-- 项目1 -->
+                <article class="project-card" data-category="web">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="assets/images/project1.jpg"
+                             alt="Project 1"
+                             loading="lazy"
+                             class="loading"
+                             width="400"
+                             height="300">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-lg">
+                        <h3 class="text-lg font-bold mb-2">
+                            <a href="project-detail.html?id=1" class="hover:text-primary-600 transition-colors duration-200">
+                                Project One
+                            </a>
+                        </h3>
+                        <p class="text-sm text-text-secondary mb-4">
+                            A beautiful web application built with modern technologies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tag-primary">React</span>
+                            <span class="tag-primary">Node.js</span>
+                            <span class="tag-primary">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="project-detail.html?id=1" class="text-primary-600 hover:text-primary-700">
+                                View details
+                            </a>
+                            <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目2 -->
+                <article class="project-card" data-category="mobile">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="assets/images/projects/project2.jpg" 
+                             alt="Task Management App" 
+                             class="w-full h-48 object-cover transition-transform duration-300"
+                             loading="lazy">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-lg">
+                        <h3 class="text-lg font-bold mb-2">
+                            <a href="project-detail.html?id=2" class="hover:text-primary-600 transition-colors duration-200">
+                                Task Management App
+                            </a>
+                        </h3>
+                        <p class="text-sm text-text-secondary mb-4">
+                            A collaborative task management solution with real-time updates and team collaboration features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tag-primary">React Native</span>
+                            <span class="tag-primary">Firebase</span>
+                            <span class="tag-primary">Redux</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="project-detail.html?id=2" class="text-primary-600 hover:text-primary-700">
+                                View details
+                            </a>
+                            <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目3 -->
+                <article class="project-card" data-category="design">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="assets/images/projects/project3.jpg" 
+                             alt="Social Media Dashboard" 
+                             class="w-full h-48 object-cover transition-transform duration-300"
+                             loading="lazy">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-lg">
+                        <h3 class="text-lg font-bold mb-2">
+                            <a href="project-detail.html?id=3" class="hover:text-primary-600 transition-colors duration-200">
+                                Social Media Dashboard
+                            </a>
+                        </h3>
+                        <p class="text-sm text-text-secondary mb-4">
+                            An analytics dashboard for social media management with data visualization and reporting tools.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tag-primary">Vue.js</span>
+                            <span class="tag-primary">D3.js</span>
+                            <span class="tag-primary">Express</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="project-detail.html?id=3" class="text-primary-600 hover:text-primary-700">
+                                View details
+                            </a>
+                            <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 更多项目卡片... -->
+            </div>
+
+            <!-- 加载更多按钮 -->
+            <div class="text-center mt-12">
+                <button class="btn-primary btn-lg" id="loadMoreBtn">
+                    Load More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 联系信息 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-envelope mr-2"></i> hello@example.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+
+                <!-- 快速链接 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="hover:text-primary-light transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="hover:text-primary-light transition-colors">About</a></li>
+                        <li><a href="/projects.html" class="hover:text-primary-light transition-colors">Projects</a></li>
+                        <li><a href="/blog.html" class="hover:text-primary-light transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- 社交媒体 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Personal Brand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 自定义 JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html> 

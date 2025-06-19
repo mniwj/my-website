@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about my professional background, skills, and passion for web development">
+    <title>About Me | Personal Brand</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1E3A8A',
+                            light: '#3B82F6'
+                        },
+                        text: {
+                            DEFAULT: '#111827',
+                            secondary: '#4B5563'
+                        },
+                        accent: {
+                            orange: '#FB923C'
+                        }
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter text-text bg-white">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="/" class="text-2xl font-bold font-montserrat text-primary">
+                    <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
+                </a>
+
+                <!-- 桌面端导航菜单 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link active">About</a>
+                    <a href="/projects.html" class="nav-link">Projects</a>
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-text" id="menuButton">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="container-custom py-4 bg-white">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link active">About</a>
+                    <a href="/projects.html" class="nav-link">Projects</a>
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-orange-50 to-blue-50">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- 左侧文本内容 -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-5xl font-bold font-montserrat text-primary leading-tight">
+                        Passionate About<br>
+                        Web Development
+                    </h1>
+                    <p class="text-xl text-text-secondary leading-relaxed">
+                        Full-stack developer with 5+ years of experience in creating modern web applications and digital solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/contact.html" class="btn-primary btn-lg">Get in Touch</a>
+                        <a href="/projects.html" class="btn-secondary btn-lg">View Portfolio</a>
+                    </div>
+                </div>
+
+                <!-- 右侧照片 -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-accent-orange opacity-10 rounded-3xl transform rotate-6"></div>
+                    <img src="assets/images/profile.jpg" alt="Professional headshot" 
+                         class="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 个人简介 -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container-custom">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-primary mb-8">
+                    My Journey
+                </h2>
+                <div class="prose prose-lg">
+                    <p class="text-lg leading-relaxed mb-6">
+                        With a background in Computer Science and years of hands-on experience, I've developed a deep passion for creating elegant solutions to complex problems. My journey in web development started with simple HTML pages and has evolved into building sophisticated full-stack applications.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        I specialize in <span class="font-semibold text-primary">modern JavaScript frameworks</span>, particularly React and Vue.js, along with extensive experience in backend technologies like Node.js and Python. My approach combines technical expertise with a strong focus on user experience and clean code principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能和专长 -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container-custom">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-primary text-center mb-12">
+                Skills & Expertise
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 前端开发 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                React & Vue.js
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Modern JavaScript (ES6+)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Responsive Design
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 后端开发 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Backend Development</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Node.js & Express
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Python & Django
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Database Design
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 其他技能 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-primary-light text-4xl mb-4">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Other Skills</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                DevOps & CI/CD
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                UI/UX Design
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Project Management
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container-custom">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-primary text-center mb-12">
+                Work Experience
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-12">
+                <!-- 经历 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="flex flex-wrap justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Senior Full Stack Developer</h3>
+                                <p class="text-primary-light">Tech Company Name</p>
+                            </div>
+                            <span class="tag-secondary">2020 - Present</span>
+                        </div>
+                        <p class="text-text-secondary mb-4">
+                            Led the development of multiple high-impact web applications, improving user engagement by 40% through innovative features and optimized performance.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-primary">React</span>
+                            <span class="tag-primary">Node.js</span>
+                            <span class="tag-primary">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 经历 2 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="flex flex-wrap justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Frontend Developer</h3>
+                                <p class="text-primary-light">Previous Company</p>
+                            </div>
+                            <span class="tag-secondary">2018 - 2020</span>
+                        </div>
+                        <p class="text-text-secondary mb-4">
+                            Developed and maintained client-facing applications, collaborating with design and backend teams to deliver seamless user experiences.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-primary">Vue.js</span>
+                            <span class="tag-primary">JavaScript</span>
+                            <span class="tag-primary">SASS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 联系信息 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-envelope mr-2"></i> hello@example.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+
+                <!-- 快速链接 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="hover:text-primary-light transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="hover:text-primary-light transition-colors">About</a></li>
+                        <li><a href="/projects.html" class="hover:text-primary-light transition-colors">Projects</a></li>
+                        <li><a href="/blog.html" class="hover:text-primary-light transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- 社交媒体 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-primary-light transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Personal Brand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 自定义 JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

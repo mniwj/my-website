@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components - Personal Brand</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-secondary-50">
+    <div class="container-custom section-padding">
+        <!-- 按钮展示 -->
+        <section class="mb-12">
+            <h2>Buttons</h2>
+            <div class="space-y-6">
+                <!-- 按钮尺寸 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Button Sizes</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-primary btn-sm">Small Button</button>
+                        <button class="btn-primary btn-md">Medium Button</button>
+                        <button class="btn-primary btn-lg">Large Button</button>
+                    </div>
+                </div>
+
+                <!-- 按钮样式 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Button Variants</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-primary btn-md">
+                            <i class="fas fa-check"></i>
+                            Primary Button
+                        </button>
+                        <button class="btn-secondary btn-md">
+                            <i class="fas fa-arrow-right"></i>
+                            Secondary Button
+                        </button>
+                        <button class="btn-text btn-md">
+                            <i class="fas fa-link"></i>
+                            Text Button
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 禁用状态 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Disabled State</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-primary btn-md" disabled>Disabled Primary</button>
+                        <button class="btn-secondary btn-md" disabled>Disabled Secondary</button>
+                        <button class="btn-text btn-md" disabled>Disabled Text</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 卡片展示 -->
+        <section class="mb-12">
+            <h2>Cards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 卡片 1 -->
+                <div class="card">
+                    <img src="https://picsum.photos/seed/1/800/400" alt="Card image" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Card Title</h3>
+                        <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="card-footer">
+                            <button class="btn-text btn-sm">Read More</button>
+                            <span class="text-secondary-500">
+                                <i class="far fa-heart"></i> 24
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="card">
+                    <img src="https://picsum.photos/seed/2/800/400" alt="Card image" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Card Title</h3>
+                        <p class="card-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class="card-footer">
+                            <button class="btn-text btn-sm">Read More</button>
+                            <span class="text-secondary-500">
+                                <i class="far fa-heart"></i> 32
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签展示 -->
+        <section class="mb-12">
+            <h2>Tags</h2>
+            <div class="space-y-6">
+                <!-- 基础标签 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Basic Tags</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag-primary">Primary Tag</span>
+                        <span class="tag-secondary">Secondary Tag</span>
+                        <span class="tag-success">Success Tag</span>
+                        <span class="tag-warning">Warning Tag</span>
+                        <span class="tag-danger">Danger Tag</span>
+                        <span class="tag-info">Info Tag</span>
+                    </div>
+                </div>
+
+                <!-- 可关闭标签 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Closeable Tags</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag-primary">
+                            Primary
+                            <i class="fas fa-times tag-close"></i>
+                        </span>
+                        <span class="tag-secondary">
+                            Secondary
+                            <i class="fas fa-times tag-close"></i>
+                        </span>
+                        <span class="tag-success">
+                            Success
+                            <i class="fas fa-times tag-close"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 带图标的标签 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Tags with Icons</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag-primary">
+                            <i class="fas fa-star"></i>
+                            Featured
+                        </span>
+                        <span class="tag-success">
+                            <i class="fas fa-check"></i>
+                            Completed
+                        </span>
+                        <span class="tag-warning">
+                            <i class="fas fa-clock"></i>
+                            Pending
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
