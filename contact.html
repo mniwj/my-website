@@ -10,31 +10,50 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-sm z-50">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300 dark:bg-secondary-900 dark:bg-opacity-80 dark:border-b dark:border-secondary-700">
         <div class="container-custom">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="text-xl font-bold text-primary-600">Your Name</a>
-                <div class="hidden md:flex items-center space-x-8">
+                <!-- Logo -->
+                <a href="/" class="text-2xl font-bold font-montserrat text-primary">
+                    <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
+                </a>
+
+                <!-- 右侧导航菜单和按钮 -->
+                <div class="flex items-center space-x-8">
+                    <!-- 桌面端导航菜单 -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="projects.html" class="nav-link">Projects</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </div>
+
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" class="text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-4 focus:ring-secondary-200 dark:focus:ring-secondary-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM13 17a1 1 0 100-2v-1a1 1 0 10-2 0v1a1 1 0 102 0z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden text-text" id="menuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="container-custom py-4 bg-white dark:bg-secondary-900 dark:border-t dark:border-secondary-700">
+                <div class="flex flex-col space-y-4">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="projects.html" class="nav-link">Projects</a>
                     <a href="blog.html" class="nav-link">Blog</a>
                     <a href="contact.html" class="nav-link active">Contact</a>
                 </div>
-                <button class="md:hidden" id="mobile-menu-button">
-                    <i class="fas fa-bars text-2xl text-secondary-600"></i>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-secondary-600 hover:text-primary-600">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-secondary-600 hover:text-primary-600">About</a>
-                <a href="projects.html" class="block px-3 py-2 text-secondary-600 hover:text-primary-600">Projects</a>
-                <a href="blog.html" class="block px-3 py-2 text-secondary-600 hover:text-primary-600">Blog</a>
-                <a href="contact.html" class="block px-3 py-2 text-primary-600">Contact</a>
             </div>
         </div>
     </nav>
@@ -52,107 +71,109 @@
     <!-- Main Content -->
     <main class="py-16">
         <div class="container-custom">
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Contact Information -->
-                <div class="bg-white rounded-lg shadow-soft p-8">
-                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Contact Information</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-primary-600 text-xl"></i>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Contact Information -->
+                    <div class="bg-white rounded-lg shadow-soft p-8">
+                        <h2 class="text-2xl font-bold text-secondary-900 mb-6">Contact Information</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-secondary-900 mb-1">Email</h3>
+                                    <p class="text-secondary-600">contact@example.com</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-secondary-900 mb-1">Email</h3>
-                                <p class="text-secondary-600">contact@example.com</p>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-secondary-900 mb-1">Phone</h3>
+                                    <p class="text-secondary-600">+1 (234) 567-890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-secondary-900 mb-1">Location</h3>
+                                    <p class="text-secondary-600">Beijing, China</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-lg shadow-soft p-8">
+                        <h2 class="text-2xl font-bold text-secondary-900 mb-6">Send a Message</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-secondary-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
+                                    placeholder="Your name">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-secondary-900 mb-1">Phone</h3>
-                                <p class="text-secondary-600">+1 (234) 567-890</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                                <label for="email" class="block text-sm font-medium text-secondary-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
+                                    placeholder="Your email">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-secondary-900 mb-1">Location</h3>
-                                <p class="text-secondary-600">Beijing, China</p>
+                                <label for="subject" class="block text-sm font-medium text-secondary-700 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" required
+                                    class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
+                                    placeholder="Message subject">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
                             </div>
-                        </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-secondary-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
+                                    placeholder="Your message"></textarea>
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="privacy" name="privacy" required
+                                    class="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-secondary-300 rounded">
+                                <label for="privacy" class="ml-2 block text-sm text-secondary-600">
+                                    I agree to the website's <a href="#" class="text-primary-600 hover:text-primary-700">privacy policy</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="bg-white rounded-lg shadow-soft p-8">
-                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Send a Message</h2>
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-secondary-700 mb-1">Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
-                                placeholder="Your name">
-                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                <!-- FAQ Section -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-secondary-900 text-center mb-8">Frequently Asked Questions</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg shadow-soft p-6">
+                            <h3 class="text-xl font-semibold text-secondary-900 mb-3">What is your typical response time?</h3>
+                            <p class="text-secondary-600">I usually respond to all inquiries within 24 hours during business days.</p>
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-secondary-700 mb-1">Email</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
-                                placeholder="Your email">
-                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        <div class="bg-white rounded-lg shadow-soft p-6">
+                            <h3 class="text-xl font-semibold text-secondary-900 mb-3">Do you offer remote work opportunities?</h3>
+                            <p class="text-secondary-600">Yes, I'm open to remote collaboration and have experience working with international teams.</p>
                         </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-secondary-700 mb-1">Subject</label>
-                            <input type="text" id="subject" name="subject" required
-                                class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
-                                placeholder="Message subject">
-                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        <div class="bg-white rounded-lg shadow-soft p-6">
+                            <h3 class="text-xl font-semibold text-secondary-900 mb-3">What types of projects do you take on?</h3>
+                            <p class="text-secondary-600">I specialize in web development, mobile apps, and software consulting projects.</p>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-secondary-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" required
-                                class="w-full px-4 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors duration-200"
-                                placeholder="Your message"></textarea>
-                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        <div class="bg-white rounded-lg shadow-soft p-6">
+                            <h3 class="text-xl font-semibold text-secondary-900 mb-3">How can I schedule a meeting?</h3>
+                            <p class="text-secondary-600">You can use the contact form above or email me directly to schedule a meeting.</p>
                         </div>
-                        <div class="flex items-start">
-                            <input type="checkbox" id="privacy" name="privacy" required
-                                class="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-secondary-300 rounded">
-                            <label for="privacy" class="ml-2 block text-sm text-secondary-600">
-                                I agree to the website's <a href="#" class="text-primary-600 hover:text-primary-700">privacy policy</a>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="mt-16">
-                <h2 class="text-3xl font-bold text-secondary-900 text-center mb-8">Frequently Asked Questions</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-lg shadow-soft p-6">
-                        <h3 class="text-xl font-semibold text-secondary-900 mb-3">What is your typical response time?</h3>
-                        <p class="text-secondary-600">I usually respond to all inquiries within 24 hours during business days.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-soft p-6">
-                        <h3 class="text-xl font-semibold text-secondary-900 mb-3">Do you offer remote work opportunities?</h3>
-                        <p class="text-secondary-600">Yes, I'm open to remote collaboration and have experience working with international teams.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-soft p-6">
-                        <h3 class="text-xl font-semibold text-secondary-900 mb-3">What types of projects do you take on?</h3>
-                        <p class="text-secondary-600">I specialize in web development, mobile apps, and software consulting projects.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-soft p-6">
-                        <h3 class="text-xl font-semibold text-secondary-900 mb-3">How can I schedule a meeting?</h3>
-                        <p class="text-secondary-600">You can use the contact form above or email me directly to schedule a meeting.</p>
                     </div>
                 </div>
             </div>
@@ -199,5 +220,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html> 

@@ -20,33 +20,49 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300 dark:bg-secondary-900 dark:bg-opacity-80 dark:border-b dark:border-secondary-700">
         <div class="container-custom">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="text-xl font-bold text-primary-600">Your Name</a>
-                
-                <div class="hidden md:flex items-center space-x-8">
+                <!-- Logo -->
+                <a href="/" class="text-2xl font-bold font-montserrat text-primary">
+                    <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
+                </a>
+
+                <!-- 右侧导航菜单和按钮 -->
+                <div class="flex items-center space-x-8">
+                    <!-- 桌面端导航菜单 -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="projects.html" class="nav-link active">Projects</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
+
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" class="text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-4 focus:ring-secondary-200 dark:focus:ring-secondary-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM13 17a1 1 0 100-2v-1a1 1 0 10-2 0v1a1 1 0 102 0z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden text-text" id="menuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="container-custom py-4 bg-white dark:bg-secondary-900 dark:border-t dark:border-secondary-700">
+                <div class="flex flex-col space-y-4">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="projects.html" class="nav-link active">Projects</a>
                     <a href="blog.html" class="nav-link">Blog</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
-                
-                <button class="md:hidden" id="mobile-menu-button">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="container-custom py-4 space-y-4">
-                <a href="index.html" class="block nav-link">Home</a>
-                <a href="about.html" class="block nav-link">About</a>
-                <a href="projects.html" class="block nav-link active">Projects</a>
-                <a href="blog.html" class="block nav-link">Blog</a>
-                <a href="contact.html" class="block nav-link">Contact</a>
             </div>
         </div>
     </nav>
@@ -62,7 +78,7 @@
     <!-- Project Overview -->
     <section class="bg-gradient-to-b from-[#EEF2FF] to-white py-12">
         <div class="container-custom">
-            <div class="max-w-4xl">
+            <div class="max-w-6xl">
                 <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">Project Name</h1>
                 <div class="flex flex-wrap items-center gap-4 text-secondary-600 mb-8">
                     <span class="flex items-center">
@@ -84,160 +100,162 @@
 
     <!-- Main Content -->
     <div class="container-custom py-12">
-        <div class="lg:grid lg:grid-cols-3 lg:gap-8">
-            <!-- Project Content -->
-            <div class="lg:col-span-2 space-y-12">
-                <!-- Project Overview -->
-                <section>
-                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Project Overview</h2>
-                    <div class="prose prose-lg max-w-none">
-                        <p class="text-secondary-600 mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <h3 class="text-xl font-bold text-secondary-900 mt-8 mb-4">Key Features</h3>
-                        <ul class="list-disc list-inside text-secondary-600 space-y-2">
-                            <li>Feature 1 description</li>
-                            <li>Feature 2 description</li>
-                            <li>Feature 3 description</li>
-                        </ul>
-                    </div>
-                </section>
+        <div class="max-w-6xl mx-auto">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+                <!-- Project Content -->
+                <div class="lg:col-span-2 space-y-12">
+                    <!-- Project Overview -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary-900 mb-6">Project Overview</h2>
+                        <div class="prose prose-lg max-w-none">
+                            <p class="text-secondary-600 mb-4">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <h3 class="text-xl font-bold text-secondary-900 mt-8 mb-4">Key Features</h3>
+                            <ul class="list-disc list-inside text-secondary-600 space-y-2">
+                                <li>Feature 1 description</li>
+                                <li>Feature 2 description</li>
+                                <li>Feature 3 description</li>
+                            </ul>
+                        </div>
+                    </section>
 
-                <!-- Technical Highlights -->
-                <section>
-                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Technical Highlights</h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="card p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-code text-primary-600 text-2xl mr-3"></i>
-                                <h3 class="text-lg font-bold text-secondary-900">Technology Stack</h3>
+                    <!-- Technical Highlights -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary-900 mb-6">Technical Highlights</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="card p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-code text-primary-600 text-2xl mr-3"></i>
+                                    <h3 class="text-lg font-bold text-secondary-900">Technology Stack</h3>
+                                </div>
+                                <p class="text-secondary-600">Detailed explanation of the technology choices and their benefits.</p>
                             </div>
-                            <p class="text-secondary-600">Detailed explanation of the technology choices and their benefits.</p>
-                        </div>
-                        <div class="card p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-sitemap text-primary-600 text-2xl mr-3"></i>
-                                <h3 class="text-lg font-bold text-secondary-900">Architecture</h3>
+                            <div class="card p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-sitemap text-primary-600 text-2xl mr-3"></i>
+                                    <h3 class="text-lg font-bold text-secondary-900">Architecture</h3>
+                                </div>
+                                <p class="text-secondary-600">Overview of the system architecture and design decisions.</p>
                             </div>
-                            <p class="text-secondary-600">Overview of the system architecture and design decisions.</p>
-                        </div>
-                        <div class="card p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-tachometer-alt text-primary-600 text-2xl mr-3"></i>
-                                <h3 class="text-lg font-bold text-secondary-900">Performance</h3>
+                            <div class="card p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-tachometer-alt text-primary-600 text-2xl mr-3"></i>
+                                    <h3 class="text-lg font-bold text-secondary-900">Performance</h3>
+                                </div>
+                                <p class="text-secondary-600">Key performance optimizations and their impact.</p>
                             </div>
-                            <p class="text-secondary-600">Key performance optimizations and their impact.</p>
-                        </div>
-                        <div class="card p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-shield-alt text-primary-600 text-2xl mr-3"></i>
-                                <h3 class="text-lg font-bold text-secondary-900">Security</h3>
+                            <div class="card p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-shield-alt text-primary-600 text-2xl mr-3"></i>
+                                    <h3 class="text-lg font-bold text-secondary-900">Security</h3>
+                                </div>
+                                <p class="text-secondary-600">Security measures and best practices implemented.</p>
                             </div>
-                            <p class="text-secondary-600">Security measures and best practices implemented.</p>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Development Process -->
-                <section>
-                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Development Process</h2>
-                    <div class="relative">
-                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-secondary-200"></div>
-                        <div class="space-y-8">
-                            <div class="relative pl-12">
-                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-                                    <i class="fas fa-lightbulb text-primary-600"></i>
+                    <!-- Development Process -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary-900 mb-6">Development Process</h2>
+                        <div class="relative">
+                            <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-secondary-200"></div>
+                            <div class="space-y-8">
+                                <div class="relative pl-12">
+                                    <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                        <i class="fas fa-lightbulb text-primary-600"></i>
+                                    </div>
+                                    <div class="card p-6">
+                                        <h3 class="text-lg font-bold text-secondary-900 mb-2">Planning & Analysis</h3>
+                                        <p class="text-secondary-600">Initial project planning and requirements analysis phase.</p>
+                                    </div>
                                 </div>
-                                <div class="card p-6">
-                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Planning & Analysis</h3>
-                                    <p class="text-secondary-600">Initial project planning and requirements analysis phase.</p>
+                                <div class="relative pl-12">
+                                    <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                        <i class="fas fa-code-branch text-primary-600"></i>
+                                    </div>
+                                    <div class="card p-6">
+                                        <h3 class="text-lg font-bold text-secondary-900 mb-2">Development</h3>
+                                        <p class="text-secondary-600">Core development and implementation phase.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="relative pl-12">
-                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-                                    <i class="fas fa-code-branch text-primary-600"></i>
+                                <div class="relative pl-12">
+                                    <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                        <i class="fas fa-vial text-primary-600"></i>
+                                    </div>
+                                    <div class="card p-6">
+                                        <h3 class="text-lg font-bold text-secondary-900 mb-2">Testing</h3>
+                                        <p class="text-secondary-600">Comprehensive testing and quality assurance.</p>
+                                    </div>
                                 </div>
-                                <div class="card p-6">
-                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Development</h3>
-                                    <p class="text-secondary-600">Core development and implementation phase.</p>
-                                </div>
-                            </div>
-                            <div class="relative pl-12">
-                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-                                    <i class="fas fa-vial text-primary-600"></i>
-                                </div>
-                                <div class="card p-6">
-                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Testing</h3>
-                                    <p class="text-secondary-600">Comprehensive testing and quality assurance.</p>
-                                </div>
-                            </div>
-                            <div class="relative pl-12">
-                                <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-                                    <i class="fas fa-rocket text-primary-600"></i>
-                                </div>
-                                <div class="card p-6">
-                                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Launch</h3>
-                                    <p class="text-secondary-600">Project deployment and post-launch monitoring.</p>
+                                <div class="relative pl-12">
+                                    <div class="absolute left-0 w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                                        <i class="fas fa-rocket text-primary-600"></i>
+                                    </div>
+                                    <div class="card p-6">
+                                        <h3 class="text-lg font-bold text-secondary-900 mb-2">Launch</h3>
+                                        <p class="text-secondary-600">Project deployment and post-launch monitoring.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Project Screenshots -->
-                <section>
-                    <h2 class="text-2xl font-bold text-secondary-900 mb-6">Project Screenshots</h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <a href="assets/project-screenshot-1.jpg" data-lightbox="project-screenshots" data-title="Project Screenshot 1">
-                            <img src="assets/project-screenshot-1.jpg" alt="Project Screenshot 1" class="w-full h-48 object-cover rounded-lg shadow-soft hover:shadow-medium transition-shadow duration-300">
-                        </a>
-                        <a href="assets/project-screenshot-2.jpg" data-lightbox="project-screenshots" data-title="Project Screenshot 2">
-                            <img src="assets/project-screenshot-2.jpg" alt="Project Screenshot 2" class="w-full h-48 object-cover rounded-lg shadow-soft hover:shadow-medium transition-shadow duration-300">
-                        </a>
-                    </div>
-                </section>
-            </div>
+                    <!-- Project Screenshots -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary-900 mb-6">Project Screenshots</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <a href="assets/project-screenshot-1.svg" data-lightbox="project-screenshots" data-title="Project Screenshot 1">
+                                <img src="assets/project-screenshot-1.svg" alt="Project Screenshot 1" class="w-full h-48 object-cover rounded-lg shadow-soft hover:shadow-medium transition-shadow duration-300">
+                            </a>
+                            <a href="assets/project-screenshot-2.svg" data-lightbox="project-screenshots" data-title="Project Screenshot 2">
+                                <img src="assets/project-screenshot-2.svg" alt="Project Screenshot 2" class="w-full h-48 object-cover rounded-lg shadow-soft hover:shadow-medium transition-shadow duration-300">
+                            </a>
+                        </div>
+                    </section>
+                </div>
 
-            <!-- Project Info Card -->
-            <div class="lg:col-span-1">
-                <div class="sticky top-24">
-                    <div class="card p-6">
-                        <h3 class="text-lg font-bold text-secondary-900 mb-6">Project Information</h3>
-                        
-                        <div class="space-y-6">
-                            <div>
-                                <h4 class="text-sm font-medium text-secondary-500 mb-2">Technology Stack</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag tag-primary">React</span>
-                                    <span class="tag tag-primary">Node.js</span>
-                                    <span class="tag tag-primary">MongoDB</span>
+                <!-- Project Info Card -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="card p-6">
+                            <h3 class="text-lg font-bold text-secondary-900 mb-6">Project Information</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-sm font-medium text-secondary-500 mb-2">Technology Stack</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="tag tag-primary">React</span>
+                                        <span class="tag tag-primary">Node.js</span>
+                                        <span class="tag tag-primary">MongoDB</span>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div>
-                                <h4 class="text-sm font-medium text-secondary-500 mb-2">My Role</h4>
-                                <p class="text-secondary-600">Lead Developer</p>
-                            </div>
-                            
-                            <div>
-                                <h4 class="text-sm font-medium text-secondary-500 mb-2">Development Period</h4>
-                                <p class="text-secondary-600">3 months</p>
-                            </div>
-                            
-                            <div>
-                                <h4 class="text-sm font-medium text-secondary-500 mb-2">Team Size</h4>
-                                <p class="text-secondary-600">5 members</p>
-                            </div>
-                            
-                            <div class="pt-6 border-t border-secondary-100 space-y-4">
-                                <a href="#" class="btn btn-primary w-full">
-                                    <i class="fab fa-github mr-2"></i>
-                                    View Source Code
-                                </a>
-                                <a href="#" class="btn btn-secondary w-full">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    Visit Project
-                                </a>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-secondary-500 mb-2">My Role</h4>
+                                    <p class="text-secondary-600">Lead Developer</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-secondary-500 mb-2">Development Period</h4>
+                                    <p class="text-secondary-600">3 months</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-secondary-500 mb-2">Team Size</h4>
+                                    <p class="text-secondary-600">5 members</p>
+                                </div>
+                                
+                                <div class="pt-6 border-t border-secondary-100 space-y-4">
+                                    <a href="#" class="btn btn-primary w-full">
+                                        <i class="fab fa-github mr-2"></i>
+                                        View Source Code
+                                    </a>
+                                    <a href="#" class="btn btn-secondary w-full">
+                                        <i class="fas fa-external-link-alt mr-2"></i>
+                                        Visit Project
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -300,7 +318,6 @@
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     <script src="js/project-detail.js"></script>
-    <script src="js/performance.js"></script>
-    <script src="js/detail.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html> 

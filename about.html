@@ -43,9 +43,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-inter text-text bg-white">
+<body class="font-inter text-text bg-white dark:bg-secondary-900 transition-colors duration-200">
     <!-- 导航栏 -->
-    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300 dark:bg-secondary-900 dark:bg-opacity-80 dark:border-b dark:border-secondary-700">
         <div class="container-custom">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
@@ -53,31 +53,40 @@
                     <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
                 </a>
 
-                <!-- 桌面端导航菜单 -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about.html" class="nav-link active">About</a>
-                    <a href="/projects.html" class="nav-link">Projects</a>
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                    <a href="/contact.html" class="nav-link">Contact</a>
-                </div>
+                <!-- 右侧导航菜单和按钮 -->
+                <div class="flex items-center space-x-8">
+                    <!-- 桌面端导航菜单 -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link active">About</a>
+                        <a href="projects.html" class="nav-link">Projects</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
 
-                <!-- 移动端菜单按钮 -->
-                <button class="md:hidden text-text" id="menuButton">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" class="text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-4 focus:ring-secondary-200 dark:focus:ring-secondary-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM13 17a1 1 0 100-2v-1a1 1 0 10-2 0v1a1 1 0 102 0z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden text-text" id="menuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
         <!-- 移动端导航菜单 -->
         <div class="md:hidden hidden" id="mobileMenu">
-            <div class="container-custom py-4 bg-white">
+            <div class="container-custom py-4 bg-white dark:bg-secondary-900 dark:border-t dark:border-secondary-700">
                 <div class="flex flex-col space-y-4">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about.html" class="nav-link active">About</a>
-                    <a href="/projects.html" class="nav-link">Projects</a>
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                    <a href="/contact.html" class="nav-link">Contact</a>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -103,11 +112,12 @@
                 </div>
 
                 <!-- 右侧照片 -->
-                <div class="relative">
-                    <div class="absolute inset-0 bg-accent-orange opacity-10 rounded-3xl transform rotate-6"></div>
-                    <img src="assets/images/profile.jpg" alt="Professional headshot" 
-                         class="relative rounded-3xl shadow-xl w-full max-w-md mx-auto"
-                         loading="lazy">
+                <div class="col-span-1 lg:col-span-1">
+                    <div class="relative">
+                        <img src="assets/images/profile.svg" alt="Professional headshot"
+                             class="w-full h-96 object-cover rounded-lg shadow-soft">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -319,5 +329,6 @@
 
     <!-- 自定义 JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html> 

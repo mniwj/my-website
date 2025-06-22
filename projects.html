@@ -40,9 +40,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-inter text-text bg-gray-50">
+<body class="font-inter text-text bg-gray-50 dark:bg-secondary-900 transition-colors duration-200">
     <!-- 导航栏 -->
-    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300 dark:bg-secondary-900 dark:bg-opacity-80 dark:border-b dark:border-secondary-700">
         <div class="container-custom">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
@@ -50,31 +50,40 @@
                     <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
                 </a>
 
-                <!-- 桌面端导航菜单 -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about.html" class="nav-link">About</a>
-                    <a href="/projects.html" class="nav-link active">Projects</a>
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                    <a href="/contact.html" class="nav-link">Contact</a>
-                </div>
+                <!-- 右侧导航菜单和按钮 -->
+                <div class="flex items-center space-x-8">
+                    <!-- 桌面端导航菜单 -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="projects.html" class="nav-link active">Projects</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
 
-                <!-- 移动端菜单按钮 -->
-                <button class="md:hidden text-text" id="menuButton">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" class="text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-4 focus:ring-secondary-200 dark:focus:ring-secondary-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM13 17a1 1 0 100-2v-1a1 1 0 10-2 0v1a1 1 0 102 0z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden text-text" id="menuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
         <!-- 移动端导航菜单 -->
         <div class="md:hidden hidden" id="mobileMenu">
-            <div class="container-custom py-4 bg-white">
+            <div class="container-custom py-4 bg-white dark:bg-secondary-900 dark:border-t dark:border-secondary-700">
                 <div class="flex flex-col space-y-4">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about.html" class="nav-link">About</a>
-                    <a href="/projects.html" class="nav-link active">Projects</a>
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                    <a href="/contact.html" class="nav-link">Contact</a>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -118,117 +127,115 @@
     <!-- 项目展示区域 -->
     <section class="py-12 md:py-16">
         <div class="container-custom">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
-                <!-- 项目1 -->
-                <article class="project-card" data-category="web">
-                    <div class="relative overflow-hidden rounded-t-lg">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                             data-src="assets/images/project1.jpg"
-                             alt="Project 1"
-                             loading="lazy"
-                             class="loading"
-                             width="400"
-                             height="300">
-                    </div>
-                    <div class="p-6 bg-white rounded-b-lg">
-                        <h3 class="text-lg font-bold mb-2">
-                            <a href="project-detail.html?id=1" class="hover:text-primary-600 transition-colors duration-200">
-                                Project One
-                            </a>
-                        </h3>
-                        <p class="text-sm text-text-secondary mb-4">
-                            A beautiful web application built with modern technologies.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tag-primary">React</span>
-                            <span class="tag-primary">Node.js</span>
-                            <span class="tag-primary">MongoDB</span>
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+                    <!-- 项目1 -->
+                    <article class="project-card" data-category="web">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 data-src="assets/images/project1.jpg"
+                                 alt="Project 1"
+                                 loading="lazy"
+                                 class="loading"
+                                 width="400"
+                                 height="300">
                         </div>
-                        <div class="flex justify-between items-center">
-                            <a href="project-detail.html?id=1" class="text-primary-600 hover:text-primary-700">
-                                View details
-                            </a>
-                            <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
+                        <div class="p-6 bg-white rounded-b-lg">
+                            <h3 class="text-lg font-bold mb-2">
+                                <a href="project-detail.html?id=1" class="hover:text-primary-600 transition-colors duration-200">
+                                    Project One
+                                </a>
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-4">
+                                A beautiful web application built with modern technologies.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag-primary">React</span>
+                                <span class="tag-primary">Node.js</span>
+                                <span class="tag-primary">MongoDB</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="project-detail.html?id=1" class="text-primary-600 hover:text-primary-700">
+                                    View details
+                                </a>
+                                <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- 项目2 -->
-                <article class="project-card" data-category="mobile">
-                    <div class="relative overflow-hidden rounded-t-lg">
-                        <img src="assets/images/projects/project2.jpg" 
-                             alt="Task Management App" 
-                             class="w-full h-48 object-cover transition-transform duration-300"
-                             loading="lazy">
-                    </div>
-                    <div class="p-6 bg-white rounded-b-lg">
-                        <h3 class="text-lg font-bold mb-2">
-                            <a href="project-detail.html?id=2" class="hover:text-primary-600 transition-colors duration-200">
-                                Task Management App
-                            </a>
-                        </h3>
-                        <p class="text-sm text-text-secondary mb-4">
-                            A collaborative task management solution with real-time updates and team collaboration features.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tag-primary">React Native</span>
-                            <span class="tag-primary">Firebase</span>
-                            <span class="tag-primary">Redux</span>
+                    <!-- 项目2 -->
+                    <article class="project-card" data-category="mobile">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="assets/images/projects/project2.svg"
+                                 alt="Project 2" class="w-full h-48 object-cover rounded-t-lg">
                         </div>
-                        <div class="flex justify-between items-center">
-                            <a href="project-detail.html?id=2" class="text-primary-600 hover:text-primary-700">
-                                View details
-                            </a>
-                            <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
+                        <div class="p-6 bg-white rounded-b-lg">
+                            <h3 class="text-lg font-bold mb-2">
+                                <a href="project-detail.html?id=2" class="hover:text-primary-600 transition-colors duration-200">
+                                    Task Management App
+                                </a>
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-4">
+                                A collaborative task management solution with real-time updates and team collaboration features.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag-primary">React Native</span>
+                                <span class="tag-primary">Firebase</span>
+                                <span class="tag-primary">Redux</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="project-detail.html?id=2" class="text-primary-600 hover:text-primary-700">
+                                    View details
+                                </a>
+                                <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- 项目3 -->
-                <article class="project-card" data-category="design">
-                    <div class="relative overflow-hidden rounded-t-lg">
-                        <img src="assets/images/projects/project3.jpg" 
-                             alt="Social Media Dashboard" 
-                             class="w-full h-48 object-cover transition-transform duration-300"
-                             loading="lazy">
-                    </div>
-                    <div class="p-6 bg-white rounded-b-lg">
-                        <h3 class="text-lg font-bold mb-2">
-                            <a href="project-detail.html?id=3" class="hover:text-primary-600 transition-colors duration-200">
-                                Social Media Dashboard
-                            </a>
-                        </h3>
-                        <p class="text-sm text-text-secondary mb-4">
-                            An analytics dashboard for social media management with data visualization and reporting tools.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tag-primary">Vue.js</span>
-                            <span class="tag-primary">D3.js</span>
-                            <span class="tag-primary">Express</span>
+                    <!-- 项目3 -->
+                    <article class="project-card" data-category="design">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="assets/images/projects/project3.svg"
+                                 alt="Project 3" class="w-full h-48 object-cover rounded-t-lg">
                         </div>
-                        <div class="flex justify-between items-center">
-                            <a href="project-detail.html?id=3" class="text-primary-600 hover:text-primary-700">
-                                View details
-                            </a>
-                            <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
+                        <div class="p-6 bg-white rounded-b-lg">
+                            <h3 class="text-lg font-bold mb-2">
+                                <a href="project-detail.html?id=3" class="hover:text-primary-600 transition-colors duration-200">
+                                    Social Media Dashboard
+                                </a>
+                            </h3>
+                            <p class="text-sm text-text-secondary mb-4">
+                                An analytics dashboard for social media management with data visualization and reporting tools.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag-primary">Vue.js</span>
+                                <span class="tag-primary">D3.js</span>
+                                <span class="tag-primary">Express</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="project-detail.html?id=3" class="text-primary-600 hover:text-primary-700">
+                                    View details
+                                </a>
+                                <a href="#" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub Repository">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- 更多项目卡片... -->
-            </div>
+                    <!-- 更多项目卡片... -->
+                </div>
 
-            <!-- 加载更多按钮 -->
-            <div class="text-center mt-12">
-                <button class="btn-primary btn-lg" id="loadMoreBtn">
-                    Load More Projects
-                </button>
+                <!-- 加载更多按钮 -->
+                <div class="text-center mt-12">
+                    <button class="btn-primary btn-lg" id="loadMoreBtn">
+                        Load More Projects
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -287,5 +294,6 @@
     <!-- 自定义 JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html> 

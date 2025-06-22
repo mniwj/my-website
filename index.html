@@ -56,7 +56,7 @@
         }
     </style>
 </head>
-<body class="font-inter text-text bg-white">
+<body class="font-inter text-text bg-white dark:bg-secondary-900 transition-colors duration-200">
     <!-- 页面加载动画 -->
     <div class="page-loader">
         <div class="loader-content">
@@ -66,7 +66,7 @@
     </div>
 
     <!-- 导航栏 -->
-    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur-md z-50 transition-all duration-300 dark:bg-secondary-900 dark:bg-opacity-80 dark:border-b dark:border-secondary-700">
         <div class="container-custom">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
@@ -74,25 +74,34 @@
                     <img src="assets/images/logo.svg" alt="Developer Logo" class="h-8">
                 </a>
 
-                <!-- 桌面端导航菜单 -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link active">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="projects.html" class="nav-link">Projects</a>
-                    <a href="blog.html" class="nav-link">Blog</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
+                <!-- 右侧导航菜单和按钮 -->
+                <div class="flex items-center space-x-8">
+                    <!-- 桌面端导航菜单 -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="projects.html" class="nav-link">Projects</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
 
-                <!-- 移动端菜单按钮 -->
-                <button class="md:hidden text-text" id="menuButton">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" class="text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-4 focus:ring-secondary-200 dark:focus:ring-secondary-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM13 17a1 1 0 100-2v-1a1 1 0 10-2 0v1a1 1 0 102 0z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden text-text" id="menuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
         <!-- 移动端导航菜单 -->
         <div class="md:hidden hidden" id="mobileMenu">
-            <div class="container-custom py-4 bg-white">
+            <div class="container-custom py-4 bg-white dark:bg-secondary-900 dark:border-t dark:border-secondary-700">
                 <div class="flex flex-col space-y-4">
                     <a href="index.html" class="nav-link active">Home</a>
                     <a href="about.html" class="nav-link">About</a>
@@ -105,16 +114,16 @@
     </nav>
 
     <!-- Hero区域 -->
-    <section id="home" class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section id="home" class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-secondary-900 dark:to-secondary-800">
         <div class="container-custom">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- 左侧文本区域 -->
                 <div class="space-y-6">
-                    <h1 class="text-4xl md:text-5xl font-bold font-montserrat text-primary leading-tight">
+                    <h1 class="text-4xl md:text-5xl font-bold font-montserrat text-primary leading-tight dark:text-primary-400">
                         Hello, I am<br>
-                        <span class="text-primary-light">Developer</span>
+                        <span class="text-primary-light dark:text-primary-300">Developer</span>
                     </h1>
-                    <p class="text-lg text-text-secondary">
+                    <p class="text-lg text-text-secondary dark:text-secondary-300">
                         Full-stack developer specializing in modern web technologies.
                         Creating elegant solutions for complex problems.
                     </p>
@@ -126,7 +135,7 @@
 
                 <!-- 右侧代码编辑器 -->
                 <div class="relative">
-                    <div class="bg-gray-900 rounded-lg shadow-xl p-4">
+                    <div class="bg-gray-900 rounded-lg shadow-xl p-4 dark:bg-secondary-800">
                         <div class="flex items-center space-x-2 mb-4">
                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -147,9 +156,9 @@
     </section>
 
     <!-- 技术栈展示 -->
-    <section id="skills" class="py-20 bg-white">
+    <section id="skills" class="py-20 bg-white dark:bg-secondary-900">
         <div class="container-custom">
-            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12">Technical Skills</h2>
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12 dark:text-white">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- 前端开发 -->
                 <div class="card">
@@ -199,100 +208,98 @@
     </section>
 
     <!-- 项目展示 -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-secondary-800">
         <div class="container-custom">
-            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 项目1 -->
-                <div class="card transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/images/project1.jpg" alt="Project 1" class="card-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">E-commerce Platform</h3>
-                        <p class="card-description">A full-featured online shopping platform with modern UI/UX.</p>
-                        <div class="flex flex-wrap gap-2 my-4">
-                            <span class="tag-primary">React</span>
-                            <span class="tag-secondary">Node.js</span>
-                            <span class="tag-info">MongoDB</span>
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12 dark:text-white">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 项目1 -->
+                    <div class="card">
+                        <img src="assets/images/project1.svg" alt="Project 1" class="card-image" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">E-commerce Platform</h3>
+                            <p class="card-description">A modern e-commerce platform built with React and Node.js.</p>
+                            <div class="card-footer">
+                                <span class="text-sm text-secondary-500">React, Node.js, MongoDB</span>
+                                <a href="project-detail.html" class="text-primary-light hover:text-primary-dark">View Details</a>
+                            </div>
                         </div>
-                        <a href="project-detail.html?id=1" class="btn-text btn-sm">View Project <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
-                </div>
 
-                <!-- 项目2 -->
-                <div class="card transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/images/project2.jpg" alt="Project 2" class="card-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">Task Management App</h3>
-                        <p class="card-description">A collaborative task management solution for teams.</p>
-                        <div class="flex flex-wrap gap-2 my-4">
-                            <span class="tag-primary">Vue.js</span>
-                            <span class="tag-secondary">Express</span>
-                            <span class="tag-info">PostgreSQL</span>
+                    <!-- 项目2 -->
+                    <div class="card">
+                        <img src="assets/images/project2.svg" alt="Project 2" class="card-image" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Task Management App</h3>
+                            <p class="card-description">A collaborative task management application with real-time updates.</p>
+                            <div class="card-footer">
+                                <span class="text-sm text-secondary-500">Vue.js, Firebase, Tailwind</span>
+                                <a href="project-detail.html" class="text-primary-light hover:text-primary-dark">View Details</a>
+                            </div>
                         </div>
-                        <a href="project-detail.html?id=2" class="btn-text btn-sm">View Project <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
-                </div>
 
-                <!-- 项目3 -->
-                <div class="card transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/images/project3.jpg" alt="Project 3" class="card-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">Social Media Dashboard</h3>
-                        <p class="card-description">Analytics and management dashboard for social media.</p>
-                        <div class="flex flex-wrap gap-2 my-4">
-                            <span class="tag-primary">Next.js</span>
-                            <span class="tag-secondary">GraphQL</span>
-                            <span class="tag-info">AWS</span>
+                    <!-- 项目3 -->
+                    <div class="card">
+                        <img src="assets/images/project3.svg" alt="Project 3" class="card-image" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Weather Dashboard</h3>
+                            <p class="card-description">A beautiful weather dashboard with location-based forecasts.</p>
+                            <div class="card-footer">
+                                <span class="text-sm text-secondary-500">JavaScript, Weather API, CSS3</span>
+                                <a href="project-detail.html" class="text-primary-light hover:text-primary-dark">View Details</a>
+                            </div>
                         </div>
-                        <a href="project-detail.html?id=3" class="btn-text btn-sm">View Project <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="projects.html" class="btn-primary btn-lg">View More Projects</a>
+                <div class="text-center mt-12">
+                    <a href="projects.html" class="btn-primary btn-lg">View More Projects</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 博客文章 -->
-    <section id="blog" class="py-20 bg-white">
+    <section id="blog" class="py-20 bg-white dark:bg-secondary-900">
         <div class="container-custom">
-            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12">Latest Articles</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 文章1 -->
-                <article class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">Modern Web Development Best Practices</h3>
-                        <p class="card-description">Learn about the latest trends and best practices in modern web development.</p>
-                        <div class="flex flex-wrap gap-2 my-4">
-                            <span class="tag-primary">Web Development</span>
-                            <span class="tag-secondary">Best Practices</span>
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center mb-12 dark:text-white">Latest Articles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 文章1 -->
+                    <article class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Modern Web Development Best Practices</h3>
+                            <p class="card-description">Learn about the latest trends and best practices in modern web development.</p>
+                            <div class="flex flex-wrap gap-2 my-4">
+                                <span class="tag-primary">Web Development</span>
+                                <span class="tag-secondary">Best Practices</span>
+                            </div>
+                            <a href="blog-detail.html?id=1" class="btn-text btn-sm">Read More <i class="fas fa-arrow-right ml-2"></i></a>
                         </div>
-                        <a href="blog-detail.html?id=1" class="btn-text btn-sm">Read More <i class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- 文章2 -->
-                <article class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">Getting Started with React Hooks</h3>
-                        <p class="card-description">A comprehensive guide to understanding and using React Hooks effectively.</p>
-                        <div class="flex flex-wrap gap-2 my-4">
-                            <span class="tag-primary">React</span>
-                            <span class="tag-secondary">Hooks</span>
+                    <!-- 文章2 -->
+                    <article class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Getting Started with React Hooks</h3>
+                            <p class="card-description">A comprehensive guide to understanding and using React Hooks effectively.</p>
+                            <div class="flex flex-wrap gap-2 my-4">
+                                <span class="tag-primary">React</span>
+                                <span class="tag-secondary">Hooks</span>
+                            </div>
+                            <a href="blog-detail.html?id=2" class="btn-text btn-sm">Read More <i class="fas fa-arrow-right ml-2"></i></a>
                         </div>
-                        <a href="blog-detail.html?id=2" class="btn-text btn-sm">Read More <i class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </article>
-            </div>
-            <div class="text-center mt-12">
-                <a href="blog.html" class="btn-primary btn-lg">Browse All Articles</a>
+                    </article>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="blog.html" class="btn-primary btn-lg">Browse All Articles</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 页脚 -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12 dark:bg-secondary-950">
         <div class="container-custom">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- 联系信息 -->
@@ -336,7 +343,7 @@
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 dark:border-secondary-700">
                 <p>&copy; 2024 Personal Brand. All rights reserved.</p>
             </div>
         </div>
@@ -345,5 +352,6 @@
     <!-- 自定义 JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/performance.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html> 

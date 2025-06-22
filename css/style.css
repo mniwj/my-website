@@ -5,11 +5,11 @@
   }
 
   body {
-    @apply bg-white text-secondary-800 font-sans;
+    @apply bg-white text-secondary-800 font-sans dark:bg-secondary-900 dark:text-secondary-200 transition-colors duration-200;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold text-secondary-900;
+    @apply font-serif font-bold text-secondary-900 dark:text-white;
   }
 
   h1 {
@@ -29,7 +29,7 @@
   }
 
   a {
-    @apply text-primary-600 hover:text-primary-700 transition-colors duration-200;
+    @apply text-primary-600 hover:text-primary-700 transition-colors duration-200 dark:text-primary-400 dark:hover:text-primary-300;
   }
 }
 
@@ -37,6 +37,10 @@
 @layer utilities {
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1588px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
   .section-padding {
@@ -45,11 +49,11 @@
 
   /* 图片优化相关样式 */
   .image-wrapper {
-    @apply relative overflow-hidden bg-secondary-100;
+    @apply relative overflow-hidden bg-secondary-100 dark:bg-secondary-800;
   }
 
   .image-placeholder {
-    @apply absolute inset-0 bg-gradient-to-br from-secondary-100 to-secondary-200 animate-pulse;
+    @apply absolute inset-0 bg-gradient-to-br from-secondary-100 to-secondary-200 animate-pulse dark:from-secondary-800 dark:to-secondary-700;
   }
 
   .image-wrapper img {
@@ -127,22 +131,26 @@
   /* 按钮变体 */
   .btn-primary {
     @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-200 
-           disabled:bg-primary-300 disabled:cursor-not-allowed;
+           disabled:bg-primary-300 disabled:cursor-not-allowed
+           dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800;
   }
 
   .btn-secondary {
     @apply btn bg-secondary-100 text-secondary-700 hover:bg-secondary-200 focus:ring-2 focus:ring-secondary-100
-           disabled:bg-secondary-50 disabled:text-secondary-400 disabled:cursor-not-allowed;
+           disabled:bg-secondary-50 disabled:text-secondary-400 disabled:cursor-not-allowed
+           dark:bg-secondary-700 dark:text-white dark:hover:bg-secondary-600 dark:focus:ring-secondary-600;
   }
 
   .btn-text {
     @apply btn text-secondary-600 hover:bg-secondary-50 focus:ring-2 focus:ring-secondary-100
-           disabled:text-secondary-300 disabled:hover:bg-transparent disabled:cursor-not-allowed;
+           disabled:text-secondary-300 disabled:hover:bg-transparent disabled:cursor-not-allowed
+           dark:text-secondary-300 dark:hover:bg-secondary-800 dark:focus:ring-secondary-700;
   }
 
   /* 卡片样式 */
   .card {
-    @apply bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300 hover:shadow-medium;
+    @apply bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300 hover:shadow-medium
+           dark:bg-secondary-800 dark:border dark:border-secondary-700 dark:shadow-lg;
   }
 
   .card-image {
@@ -154,15 +162,17 @@
   }
 
   .card-title {
-    @apply text-xl font-bold text-secondary-900 mb-2 hover:text-primary-600 transition-colors duration-200;
+    @apply text-xl font-bold text-secondary-900 mb-2 hover:text-primary-600 transition-colors duration-200
+           dark:text-white dark:hover:text-primary-400;
   }
 
   .card-description {
-    @apply text-secondary-600 text-sm leading-relaxed;
+    @apply text-secondary-600 text-sm leading-relaxed dark:text-secondary-300;
   }
 
   .card-footer {
-    @apply mt-4 pt-4 border-t border-secondary-100 flex items-center justify-between;
+    @apply mt-4 pt-4 border-t border-secondary-100 flex items-center justify-between
+           dark:border-secondary-700;
   }
 
   /* 标签样式 */
@@ -176,53 +186,57 @@
 
   /* 标签颜色变体 */
   .tag-primary {
-    @apply tag bg-primary-100 text-primary-700;
+    @apply tag bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300;
   }
 
   .tag-secondary {
-    @apply tag bg-secondary-100 text-secondary-700;
+    @apply tag bg-secondary-100 text-secondary-700 dark:bg-secondary-700 dark:text-secondary-200;
   }
 
   .tag-success {
-    @apply tag bg-green-100 text-green-700;
+    @apply tag bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300;
   }
 
   .tag-warning {
-    @apply tag bg-yellow-100 text-yellow-700;
+    @apply tag bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300;
   }
 
   .tag-danger {
-    @apply tag bg-red-100 text-red-700;
+    @apply tag bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300;
   }
 
   .tag-info {
-    @apply tag bg-blue-100 text-blue-700;
+    @apply tag bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300;
   }
 
   /* 导航链接样式 */
   .nav-link {
-    @apply text-text-secondary hover:text-primary-light transition-colors duration-200;
+    @apply text-text-secondary hover:text-primary-light transition-colors duration-200
+           dark:text-secondary-300 dark:hover:text-white;
   }
 
   .nav-link.active {
-    @apply text-primary-light font-medium;
+    @apply text-primary-light font-medium dark:text-primary-400;
   }
 
   /* 项目页面特定样式 */
   .filter-tag {
     @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
            bg-secondary-100 text-secondary-700 hover:bg-secondary-200
-           focus:outline-none focus:ring-2 focus:ring-secondary-200;
+           focus:outline-none focus:ring-2 focus:ring-secondary-200
+           dark:bg-secondary-700 dark:text-secondary-200 dark:hover:bg-secondary-600 dark:focus:ring-secondary-600;
   }
 
   .filter-tag.active {
     @apply bg-primary-light text-white hover:bg-primary-600
-           focus:ring-primary-200;
+           focus:ring-primary-200
+           dark:bg-primary-500 dark:hover:bg-primary-600 dark:focus:ring-primary-800;
   }
 
   .project-card {
     @apply bg-white rounded-lg shadow-soft overflow-hidden transition-all duration-300
-           hover:shadow-medium hover:-translate-y-1;
+           hover:shadow-medium hover:-translate-y-1
+           dark:bg-secondary-800 dark:border dark:border-secondary-700 dark:shadow-lg;
   }
 
   .project-card img {
@@ -236,7 +250,7 @@
   /* 博客页面特定样式 */
   .blog-card {
     @apply bg-white rounded-lg shadow-soft overflow-hidden transition-all duration-300
-           hover:shadow-medium hover:-translate-y-1;
+           dark:bg-secondary-800 dark:border dark:border-secondary-700;
   }
 
   .blog-card img {
@@ -248,7 +262,7 @@
   }
 
   .blog-meta {
-    @apply flex items-center gap-4 text-sm text-secondary-500;
+    @apply flex items-center gap-4 text-sm text-secondary-500 dark:text-secondary-400;
   }
 
   .blog-meta-item {
@@ -257,13 +271,14 @@
 
   /* 分页样式 */
   .pagination-btn {
-    @apply w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium
-           bg-secondary-100 text-secondary-700 hover:bg-secondary-200
-           transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply px-3 py-2 text-sm font-medium text-secondary-500 bg-white border border-secondary-300 rounded-md
+           hover:bg-secondary-50 hover:text-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-500
+           dark:bg-secondary-800 dark:border-secondary-600 dark:text-secondary-300 dark:hover:bg-secondary-700;
   }
 
   .pagination-btn.active {
-    @apply bg-primary-600 text-white hover:bg-primary-700;
+    @apply bg-primary-600 text-white border-primary-600 hover:bg-primary-700
+           dark:bg-primary-600 dark:border-primary-600;
   }
 
   /* 文章详情页样式 */
@@ -272,31 +287,34 @@
   }
 
   .prose h2 {
-    @apply text-2xl font-bold text-secondary-900 mt-8 mb-4;
+    @apply text-2xl font-bold text-secondary-900 mb-4 dark:text-white;
   }
 
   .prose p {
-    @apply text-secondary-600 leading-relaxed mb-6;
+    @apply mb-4 leading-relaxed text-secondary-600 dark:text-secondary-300;
   }
 
   .prose .lead {
-    @apply text-xl text-secondary-700 mb-8;
+    @apply text-lg text-secondary-700 dark:text-secondary-200;
   }
 
   .prose pre {
-    @apply relative bg-secondary-900 rounded-lg p-4 mb-6 overflow-x-auto;
+    @apply bg-secondary-100 text-sm p-4 rounded-lg overflow-x-auto
+           dark:bg-secondary-800 dark:border dark:border-secondary-700;
   }
 
   .prose code {
-    @apply font-mono text-sm;
+    @apply text-sm font-mono bg-secondary-100 px-1 py-0.5 rounded
+           dark:bg-secondary-700 dark:text-secondary-200;
   }
 
   .prose pre code {
-    @apply text-secondary-100;
+    @apply bg-transparent p-0 rounded-none dark:text-secondary-200;
   }
 
   .prose .copy-button {
-    @apply opacity-0 transition-opacity duration-200;
+    @apply absolute top-2 right-2 p-2 text-secondary-400 hover:text-secondary-600 rounded
+           dark:text-secondary-500 dark:hover:text-secondary-300;
   }
 
   .prose pre:hover .copy-button {
@@ -305,34 +323,36 @@
 
   /* 代码块样式 */
   .language-bash,
+  .language-javascript,
   .language-typescript,
-  .language-javascript {
+  .language-html,
+  .language-css {
     @apply font-mono text-sm;
   }
 
   .token.comment {
-    @apply text-secondary-400;
+    @apply text-secondary-500 dark:text-secondary-400;
   }
 
   .token.function {
-    @apply text-blue-400;
+    @apply text-blue-600 dark:text-blue-400;
   }
 
   .token.keyword {
-    @apply text-purple-400;
+    @apply text-purple-600 dark:text-purple-400;
   }
 
   .token.string {
-    @apply text-green-400;
+    @apply text-green-600 dark:text-green-400;
   }
 
   .token.number {
-    @apply text-yellow-400;
+    @apply text-orange-600 dark:text-orange-400;
   }
 
   /* 动画类 */
   .fade-in {
-    @apply opacity-0 transition-opacity duration-300;
+    @apply opacity-0 transition-opacity duration-500;
   }
 
   .fade-in.active {
@@ -340,18 +360,18 @@
   }
 
   .slide-up {
-    @apply transform translate-y-4 transition-transform duration-300;
+    @apply transform translate-y-8 opacity-0 transition-all duration-500;
   }
 
   .slide-up.active {
-    @apply translate-y-0;
+    @apply translate-y-0 opacity-100;
   }
 
   /* 文本截断 */
   .line-clamp-2 {
+    @apply overflow-hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    -webkit-line-clamp: 2;
   }
 } 
